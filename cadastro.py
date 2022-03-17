@@ -4,7 +4,7 @@
 # atualizar
 # deletar
 # buscar
-
+# banco de dados sql3
 
 
 while True:
