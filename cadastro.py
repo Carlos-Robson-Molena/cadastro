@@ -1,12 +1,21 @@
+import sqlite3
+# banco de dados sqlite
+banco = sqlite3.connect('oficina.db')
 
+cursor = banco.cursor()
+#cursor.execute("CREATE TABLE clientes (nome text, cpf integer, carro text, placa text)")
+#cursor.execute("INSERT INTO clientes VALUES('karem', 123456789, 'celta', 'asd1234' )")
+#banco.commit()
 
+cursor.execute("SELECT * FROM clientes")
+print(cursor.fetchall())
 # cadastrar
 # atualizar
 # deletar
 # buscar
-# banco de dados sql3
 
 
+'''
 while True:
     print('-=' * 15)
     print('Sistem de Cadastro Mecanica')
@@ -22,4 +31,4 @@ while True:
         print('Exit')
         break
     elif opc == 1:
-        print()
+        print()'''
