@@ -7,15 +7,42 @@ cursor = banco.cursor()
 #cursor.execute("INSERT INTO clientes VALUES('karem', 123456789, 'celta', 'asd1234' )")
 #banco.commit()
 
-cursor.execute("SELECT * FROM clientes")
-print(cursor.fetchall())
+#cursor.execute("SELECT * FROM clientes")
+#print(cursor.fetchall())
 # cadastrar
 # atualizar
 # deletar
 # buscar
+def conectar():
+    banco = sqlite3.connect('oficina.db')
+
+def desconectar():
+    print()
+
+def ver_clientes():
+    conectar()
+    cursor.execute("SELECT * FROM clientes")
+    print(cursor.fetchall())
+
+def inserir():
+    conectar()
+    nome = input('nome: ')
+    cpf = input('Cpf: ')
+    carro = input('Carro: ')
+    placa = input('Placa: ')
+    cursor.execute("INSERT INTO clientes ( nome, cpf, carro, placa )VALUES('"+nome+"', '"+cpf+"','"+carro+"','"+placa+"' )")
+    banco.commit()
+    desconectar()
+
+def atrualizar():
+    conectar()
+    desconectar()
 
 
-'''
+def deletar():
+    conectar()
+    desconectar()
+
 while True:
     print('-=' * 15)
     print('Sistem de Cadastro Mecanica')
@@ -31,4 +58,8 @@ while True:
         print('Exit')
         break
     elif opc == 1:
-        print()'''
+
+        inserir()
+
+    elif opc == 2:
+        ver_clientes()
